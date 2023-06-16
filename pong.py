@@ -48,10 +48,10 @@ def reset():
         ballXSpeed = 1
     ballYSpeed = -2
     screen.fill((0, 0, 0))
-    pygame.draw.circle(screen, (255, 255, 0), (ballX, ballY), ballRadius, 0)
-    pygame.draw.rect(screen, (255, 40, 0), (racketX, racketY, racketWidth, racketHeight), 0)
     pygame.draw.rect(screen, (255, 255, 255), (progressBarX - progressBarBorderWidth, progressBarY - progressBarBorderWidth, progressBarWidth + 2 * progressBarBorderWidth, progressBarHeight + 2 * progressBarBorderWidth), progressBarBorderWidth)
     pygame.draw.rect(screen, (0, 255, 255), (progressBarX, progressBarY, (life * (progressBarWidth / 10)), progressBarHeight), 0)
+    pygame.draw.circle(screen, (255, 255, 0), (ballX, ballY), ballRadius, 0)
+    pygame.draw.rect(screen, (255, 40, 0), (racketX, racketY, racketWidth, racketHeight), 0)
     pygame.display.flip()
     pygame.time.wait(1000)
 
@@ -95,12 +95,12 @@ while run:
     screen.fill((0, 0, 0))
     moveRacket()
     racketBlock()
+    pygame.draw.rect(screen, (255, 255, 255), (progressBarX - progressBarBorderWidth, progressBarY - progressBarBorderWidth, progressBarWidth + 2 * progressBarBorderWidth, progressBarHeight + 2 * progressBarBorderWidth), progressBarBorderWidth)
+    pygame.draw.rect(screen, (0, 255, 255), (progressBarX, progressBarY, (life * (progressBarWidth / 10)), progressBarHeight), 0)
     pygame.draw.rect(screen, (255, 40, 0), (racketX, racketY, racketWidth, racketHeight), 0)
     moveBall()
     ballBlock()
     pygame.draw.circle(screen, (255, 255, 0), (ballX, ballY), ballRadius, 0)
-    pygame.draw.rect(screen, (255, 255, 255), (progressBarX - progressBarBorderWidth, progressBarY - progressBarBorderWidth, progressBarWidth + 2 * progressBarBorderWidth, progressBarHeight + 2 * progressBarBorderWidth), progressBarBorderWidth)
-    pygame.draw.rect(screen, (0, 255, 255), (progressBarX, progressBarY, (life * (progressBarWidth / 10)), progressBarHeight), 0)
     pygame.display.flip()
     pygame.time.wait(5)
     if life == 0:
